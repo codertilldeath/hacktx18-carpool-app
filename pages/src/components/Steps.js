@@ -63,8 +63,8 @@ const styles = {
     },
 };
 
-export class Welcome {
-    
+export class Welcome extends Component {
+
     constructor(props) {
         super(props);
         this._onChange = this._onChange.bind(this);
@@ -100,7 +100,7 @@ export class Welcome {
                 </Grid>
                 <Grid item style={styles.form} xs={12}>
                     <FormGroup>
-                    <TextField 
+                    <TextField
                         style={{color:'#97c2b9'}}
                         id="email"
                         label="Email"
@@ -174,7 +174,7 @@ export class PersonChoose extends Component {
                         <Typography variant="h2" component="h2" style={styles.tallspace}>
                             Are you a...
                 </Typography>
-                        <RadioGroup 
+                        <RadioGroup
                             aria-label="persontype"
                             name="persontype"
                             value={this.state.value}
