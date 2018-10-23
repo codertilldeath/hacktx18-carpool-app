@@ -5,6 +5,10 @@ import { states } from './components/States.js';
 import { StateMachine } from './components/StateMachine.js';
 
 class App extends Component {
+  state = {
+    response: ''
+  }
+
   constructor(props) {
     super(props);
       this.state = {
@@ -17,8 +21,17 @@ class App extends Component {
     };
     this._next = this._next.bind(this);
     this._back = this._back.bind(this);
-    this._saveFields = this._saveFields.bind(this)
+    this._saveFields = this._saveFields.bind(this);
     this.stateMachine = new StateMachine();
+  }
+
+  callApi = async(endpoint) => {
+    const response = await fetch("/api/" + endpoint);
+    const body = await response.json();
+
+    if (response.status !== 200) throw Error(body.message);
+
+    return body;
   }
 
   _saveFields(obj) {
