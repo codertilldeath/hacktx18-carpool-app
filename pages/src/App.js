@@ -4,18 +4,6 @@ import { Welcome, PersonChoose, CarInfo, Driver, Rider, Confirm } from './compon
 import { states } from './components/States.js';
 import { StateMachine } from './components/StateMachine.js';
 
-const styles = {
-  card: {
-    minWidth: 275,
-  },
-  title: {
-    fontSize: 30,
-  },
-  pos: {
-    marginBottom: 12,
-  },
-};
-
 class App extends Component {
   constructor(props) {
     super(props);

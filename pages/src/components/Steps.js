@@ -1,7 +1,4 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
-import { withStyles } from '@material-ui/core/styles';
-import classNames from 'classnames';
 import TextField from '@material-ui/core/TextField';
 import FormGroup from '@material-ui/core/FormGroup';
 import Card from '@material-ui/core/Card';
@@ -12,10 +9,8 @@ import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid';
 import { states } from './States.js';
 import Radio from '@material-ui/core/Radio';
-import RadioButtonsGroup from './Radio.js';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import FormControl from '@material-ui/core/FormControl';
-import FormLabel from '@material-ui/core/FormLabel';
 import RadioGroup from '@material-ui/core/RadioGroup';
 import InputLabel from '@material-ui/core/InputLabel';
 import MenuItem from '@material-ui/core/MenuItem';
@@ -74,7 +69,7 @@ export class Welcome extends Component {
         this.setState({ value: event.target.value });
         console.log(event.target.value);
         this.props.saveForm({
-            driver: event.target.value == 'driver'
+            driver: event.target.value === 'driver'
         });
     };
 
@@ -137,7 +132,7 @@ export class PersonChoose extends Component {
         this.setState({ value: event.target.value });
         console.log(event.target.value);
         this.props.saveForm({
-            driver: event.target.value == 'driver'
+            driver: event.target.value === 'driver'
         });
     };
 
